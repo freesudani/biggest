@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { instrProps } from "../typescript/types.types";
 
-const initialState = {
+const initialState: instrProps = {
   step: 1,
   show: false,
 };

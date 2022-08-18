@@ -7,6 +7,7 @@ export const startingVariant = {
     opacity: 1,
     x: 0,
     transition: {
+      delay: 0.5,
       type: "spring",
       mass: 0.7,
       damping: 7,

@@ -14,8 +14,9 @@ const Navbar: FC = () => {
     navigate("/");
     dispatch(navbarActions.hideNavbar());
   };
+
   return (
-    <div className="absolute top-6 left-6">
+    <div className="absolute top-6 left-6 z-10">
       <motion.div
         variants={NavbarImageVariant}
         initial="hidden"

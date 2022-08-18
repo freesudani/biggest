@@ -13,10 +13,18 @@ import { data } from "../data/instructionsdata";
 import { InstructionsProps } from "../typescript/types.types";
 import { useAppSelector, useAppDispatch } from "../App";
 import { instructionsAction } from "../redux/instr";
+import { countriesActions } from "../redux/fetch";
+import { useNavigate } from "react-router-dom";
 
 const Instructions: FC = () => {
   const step = useAppSelector((state) => state.instruction.step);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const setQuestion1Handler = () => {
+    navigate("/q1");
+    dispatch(countriesActions.setQuestion1());
+  };
 
   return (
     <motion.div
@@ -24,7 +32,7 @@ const Instructions: FC = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="h-2/4 w-3/5 bg-primary-200 border-2 border-solid border-black rounded-lg shadow-lg shadow-black relative"
+      className="h-7/12 w-3/5 bg-primary-200 border-2 border-solid border-black rounded-lg shadow-lg shadow-black relative"
     >
       <div className="grid grid-rows-[1fr_4fr]">
         <div className="flex justify-around items-center m-5">
@@ -64,19 +72,27 @@ const Instructions: FC = () => {
           </motion.h1>
         </div>
       </div>
-      <div className="absolute right-6 bottom-6 flex justify-between items-center w-32">
+      <div className="absolute right-6 bottom-6 flex justify-between items-center w-96">
         <button
-          onClick={() => dispatch(instructionsAction.instructionreverse())}
-          className="hover:scale-125 active:scale-110 active:text-secondary-200 hover:text-secondary-200 transition-all duration-300 ease-in"
+          className="mdbt secondarybt mr-5 uppercase"
+          onClick={setQuestion1Handler}
         >
-          <HiOutlineChevronDoubleLeft size={35} />
+          start
         </button>
-        <button
-          onClick={() => dispatch(instructionsAction.instructioncomplt())}
-          className="hover:scale-125 active:scale-110 active:text-secondary-200 hover:text-secondary-200 transition-all duration-300 ease-in"
-        >
-          <HiOutlineChevronDoubleRight size={35} />
-        </button>
+        <div className="flex justify-between items-center">
+          <button
+            onClick={() => dispatch(instructionsAction.instructionreverse())}
+            className="hover:scale-125 active:scale-110 active:text-secondary-200 hover:text-secondary-200 transition-all duration-300 ease-in"
+          >
+            <HiOutlineChevronDoubleLeft size={35} />
+          </button>
+          <button
+            onClick={() => dispatch(instructionsAction.instructioncomplt())}
+            className="hover:scale-125 active:scale-110 active:text-secondary-200 hover:text-secondary-200 transition-all duration-300 ease-in"
+          >
+            <HiOutlineChevronDoubleRight size={35} />
+          </button>
+        </div>
       </div>
     </motion.div>
   );
