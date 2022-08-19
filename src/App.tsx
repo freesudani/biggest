@@ -7,7 +7,11 @@ import Navbar from "./components/Navbar";
 import type { RootState, AppDispatch } from "./redux";
 import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
-import Question from "./components/Question";
+import Question1 from "./components/Question1";
+import Question2 from "./components/Question2";
+import Question3 from "./components/Question3";
+import Question4 from "./components/Question4";
+import Question5 from "./components/Question5";
 
 const App: FC = () => {
   const location = useLocation();
@@ -21,7 +25,11 @@ const App: FC = () => {
             <Route path="/" element={<Navigate to="/start" />} />
             <Route path="/start" element={<Starting />} />
             <Route path="/instructions" element={<Instructions />} />
-            <Route path="/q1" element={<Question />} />
+            <Route path="/q1" element={<Question1 />} />
+            <Route path="/q2" element={<Question2 />} />
+            <Route path="/q3" element={<Question3 />} />
+            <Route path="/q4" element={<Question4 />} />
+            <Route path="/q5" element={<Question5 />} />
           </Routes>
         </AnimatePresence>
       </div>

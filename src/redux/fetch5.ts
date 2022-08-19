@@ -18,13 +18,14 @@ const initialState: fetchProps = {
   correctAnswer2: true,
   correctAnswer1Tick: 0,
   correctAnswer2Tick: 0,
+  total: 0,
 };
 
 const countriesSlice = createSlice({
-  name: "countries",
+  name: "countries5",
   initialState,
   reducers: {
-    setQuestion1: (state) => {
+    setQuestion: (state) => {
       let Random1 =
         state.countries[Math.floor(Math.random() * state.countries.length)];
       let Random2 =
@@ -51,6 +52,7 @@ const countriesSlice = createSlice({
       state.correctAnswer2 = true;
       state.correctAnswer1Tick = 0;
       state.correctAnswer2Tick = 0;
+      state.total = 0;
 
       return state;
     },
@@ -59,6 +61,7 @@ const countriesSlice = createSlice({
       if (state.questionOption1.area > state.questionOption2.area) {
         state.correctAnswer2 = false;
         state.correctAnswer1Tick = 1;
+        state.total++;
       } else {
         state.correctAnswer1 = false;
         state.correctAnswer1Tick = 2;
@@ -70,6 +73,7 @@ const countriesSlice = createSlice({
       if (state.questionOption2.area > state.questionOption1.area) {
         state.correctAnswer1 = false;
         state.correctAnswer2Tick = 1;
+        state.total++;
       } else {
         state.correctAnswer2 = false;
         state.correctAnswer2Tick = 2;
@@ -79,5 +83,5 @@ const countriesSlice = createSlice({
   },
 });
 
-export const countriesActions = countriesSlice.actions;
+export const countriesActions5 = countriesSlice.actions;
 export default countriesSlice.reducer;

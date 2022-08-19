@@ -6,24 +6,27 @@ import {
 } from "../animations/questionAnimation";
 import { motion } from "framer-motion";
 import { useAppSelector, useAppDispatch } from "../App";
-import { countriesActions } from "../redux/fetch";
+import { countriesActions3 } from "../redux/fetch3";
+import { countriesActions4 } from "../redux/fetch4";
 import { useNavigate } from "react-router-dom";
 import ResultBox1 from "./ResultBox1";
 import ResultBox2 from "./ResultBox2";
 
-const Question: FC = () => {
-  const country = useAppSelector((state) => state.countries);
+const Question1: FC = () => {
+  const country = useAppSelector((state) => state.countries3);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const firstChoiseHandler = () => {
-    dispatch(countriesActions.chooseCountry1());
-    setTimeout(() => navigate("/q2"), 2500);
+    dispatch(countriesActions3.chooseCountry1());
+    dispatch(countriesActions4.setQuestion());
+    setTimeout(() => navigate("/q4"), 2500);
   };
 
   const secondChoiseHandler = () => {
-    dispatch(countriesActions.chooseCountry2());
-    setTimeout(() => navigate("/q2"), 2500);
+    dispatch(countriesActions3.chooseCountry2());
+    dispatch(countriesActions4.setQuestion());
+    setTimeout(() => navigate("/q4"), 2500);
   };
 
   return (
@@ -52,12 +55,15 @@ const Question: FC = () => {
           </h1>
         </div>
         <button
-          className="my-5 mdbt primarybt uppercase"
+          className="my-5 mdbt primarybt uppercase disabled:opacity-60 disabled:shadow-sm"
           onClick={firstChoiseHandler}
+          disabled={
+            !country.correctAnswer1 || !country.correctAnswer2 ? true : false
+          }
         >
           Correct Answer
         </button>
-        <ResultBox1 />
+        <ResultBox1 country={country} />
       </motion.div>
       <div className="relative">
         <svg
@@ -108,15 +114,18 @@ const Question: FC = () => {
           </h1>
         </div>
         <button
-          className="my-5 mdbt primarybt uppercase"
+          className="my-5 mdbt primarybt uppercase disabled:opacity-60 disabled:shadow-sm"
           onClick={secondChoiseHandler}
+          disabled={
+            !country.correctAnswer1 || !country.correctAnswer2 ? true : false
+          }
         >
           Correct Answer
         </button>
-        <ResultBox2 />
+        <ResultBox2 country={country} />
       </motion.div>
     </div>
   );
 };
 
-export default Question;
+export default Question1;

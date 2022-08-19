@@ -1,11 +1,9 @@
 import { FC } from "react";
-import { useAppSelector } from "../App";
 import { motion } from "framer-motion";
 import { tickVariant } from "../animations/questionAnimation";
+import { fetchcountryProps } from "../typescript/types.types";
 
-const ResultBox1: FC = () => {
-  const country = useAppSelector((state) => state.countries);
-
+const ResultBox1: FC<fetchcountryProps> = ({ country }) => {
   return (
     <div className="h-20 my-5 w-20 border-2 border-secondary-200 bg-black">
       {country.correctAnswer1Tick === 0 && <div></div>}

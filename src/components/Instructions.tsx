@@ -13,7 +13,7 @@ import { data } from "../data/instructionsdata";
 import { InstructionsProps } from "../typescript/types.types";
 import { useAppSelector, useAppDispatch } from "../App";
 import { instructionsAction } from "../redux/instr";
-import { countriesActions } from "../redux/fetch";
+import { countriesActions1 } from "../redux/fetch1";
 import { useNavigate } from "react-router-dom";
 
 const Instructions: FC = () => {
@@ -23,7 +23,7 @@ const Instructions: FC = () => {
 
   const setQuestion1Handler = () => {
     navigate("/q1");
-    dispatch(countriesActions.setQuestion1());
+    dispatch(countriesActions1.setQuestion());
   };
 
   return (
