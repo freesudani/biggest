@@ -12,14 +12,15 @@ import Question2 from "./components/Question2";
 import Question3 from "./components/Question3";
 import Question4 from "./components/Question4";
 import Question5 from "./components/Question5";
+import Result from "./components/Result";
 
 const App: FC = () => {
   const location = useLocation();
   const show = useAppSelector((state) => state.navbar.shownvb);
   return (
-    <div className="relative">
+    <div className="relative bg-world bg-center bg-cover bg-no-repeat">
       <AnimatePresence>{show && <Navbar />}</AnimatePresence>
-      <div className="h-screen w-screen flex flex-col justify-center items-center overflow-x-hidden">
+      <div className="h-screen w-screen flex flex-col justify-center items-center backdrop-blur-[3px] overflow-x-hidden">
         <AnimatePresence exitBeforeEnter>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Navigate to="/start" />} />
@@ -30,6 +31,8 @@ const App: FC = () => {
             <Route path="/q3" element={<Question3 />} />
             <Route path="/q4" element={<Question4 />} />
             <Route path="/q5" element={<Question5 />} />
+            <Route path="/result" element={<Result />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
       </div>

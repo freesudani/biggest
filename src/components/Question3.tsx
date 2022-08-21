@@ -30,7 +30,7 @@ const Question1: FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 h-screen w-screen">
+    <div className="grid grid-cols-3 h-screen w-screen overflow-y-hidden">
       <motion.div
         variants={questionOption1Variant}
         initial="hidden"
@@ -83,7 +83,7 @@ const Question1: FC = () => {
             <rect
               x="6.275"
               y="0"
-              className="fill-black"
+              className="fill-primary-200"
               width="0.5"
               height="20.3"
             />

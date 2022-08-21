@@ -19,18 +19,16 @@ const Question1: FC = () => {
 
   const firstChoiseHandler = () => {
     dispatch(countriesActions5.chooseCountry1());
-    dispatch(countriesActions1.setQuestion());
     setTimeout(() => navigate("/result"), 2500);
   };
 
   const secondChoiseHandler = () => {
     dispatch(countriesActions5.chooseCountry2());
-    dispatch(countriesActions1.setQuestion());
-    setTimeout(() => navigate("/q1"), 2500);
+    setTimeout(() => navigate("/result"), 2500);
   };
 
   return (
-    <div className="grid grid-cols-3 h-screen w-screen">
+    <div className="grid grid-cols-3 h-screen w-screen overflow-y-hidden">
       <motion.div
         variants={questionOption1Variant}
         initial="hidden"
@@ -83,7 +81,7 @@ const Question1: FC = () => {
             <rect
               x="6.275"
               y="0"
-              className="fill-black"
+              className="fill-primary-200"
               width="0.5"
               height="20.3"
             />

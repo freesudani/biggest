@@ -33,7 +33,9 @@ module.exports = {
         primary: { 200: "#fca103", 100: "#fcb335" },
         secondary: { 200: "#0335fc", 100: "#355dfc" },
       },
-      backgroundImage: {},
+      backgroundImage: {
+        world: "url(./images/greg-rosenke-GOWz0zTf_vY-unsplash.jpg)",
+      },
     },
   },
   plugins: [],

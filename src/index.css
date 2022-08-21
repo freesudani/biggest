@@ -21,7 +21,7 @@
   }
 
   .outlinedbt {
-    @apply cursor-pointer bg-transparent text-black  rounded-lg border-2 border-black border-solid shadow-md shadow-black  hover:text-white hover:bg-primary-200 active:shadow-sm active:translate-y-0.5  transition-all duration-300 ease-in;
+    @apply cursor-pointer bg-transparent text-black  rounded-lg border-2 border-primary-200 border-solid shadow-md shadow-black  hover:text-white hover:bg-primary-200 active:shadow-sm active:translate-y-0.5  transition-all duration-300 ease-in;
   }
 
   .lgbt {
