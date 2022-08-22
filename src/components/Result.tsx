@@ -29,7 +29,7 @@ const Result: FC = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="w-3/5 h-[35rem] bg-primary-200 border-2 border-solid border-black rounded-lg shadow-lg shadow-black   overflow-hidden grid grid-cols-[3fr_2fr] justify-items-center"
+      className="w-3/5 h-[35rem] md:h-[45rem] bg-primary-200 border-2 border-solid border-black rounded-lg shadow-lg shadow-black   overflow-hidden grid grid-cols-[3fr_2fr] md:grid-cols-1 md:grid-row-2 justify-items-center"
     >
       <motion.div
         variants={paragraphVariant}

@@ -30,13 +30,13 @@ const Question1: FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 h-screen w-screen overflow-y-hidden">
+    <div className="grid grid-cols-3 md:grid-rows-3 md:grid-cols-1 md:justify-center md:items-center h-screen w-screen overflow-y-hidden">
       <motion.div
         variants={questionOption1Variant}
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="flex flex-col justify-center items-center pl-52"
+        className="h-full flex flex-col justify-center items-center pl-52 md:pl-0 md:mt-64"
       >
         <div>
           <img
@@ -44,8 +44,8 @@ const Question1: FC = () => {
             alt="flag"
             className={
               country.correctAnswer1
-                ? `rounded-full  border-primary-200 border-8 h-80 w-80`
-                : `rounded-full  border-red-500 border-8 h-80 w-80 transition-all duration-300 ease-in-out`
+                ? `rounded-full  border-primary-200 border-8 h-80 w-80 md:h-60 md:w-60`
+                : `rounded-full  border-red-500 border-8 h-80 w-80 md:h-60 md:w-60 transition-all duration-300 ease-in-out`
             }
           />
         </div>
@@ -65,7 +65,7 @@ const Question1: FC = () => {
         </button>
         <ResultBox1 country={country} />
       </motion.div>
-      <div className="relative">
+      <div className="relative md:rotate-90">
         <svg
           version="1.1"
           id="Capa_1"
@@ -95,7 +95,7 @@ const Question1: FC = () => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="flex flex-col justify-center items-center pr-52 "
+        className="h-full flex flex-col justify-center items-center pr-52  md:pr-0 md:mb-64 "
       >
         <div>
           <img
@@ -103,8 +103,8 @@ const Question1: FC = () => {
             alt="flag"
             className={
               country.correctAnswer2
-                ? `rounded-full  border-primary-200 border-8 h-80 w-80`
-                : `rounded-full  border-red-500 border-8 h-80 w-80 transition-all duration-300 ease-in-out`
+                ? `rounded-full  border-primary-200 border-8 h-80 w-80 md:h-60 md:w-60`
+                : `rounded-full  border-red-500 border-8 h-80 w-80 md:h-60 md:w-60  transition-all duration-300 ease-in-out`
             }
           />
         </div>

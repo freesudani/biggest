@@ -5,7 +5,7 @@ import { fetchcountryProps } from "../typescript/types.types";
 
 const ResultBox1: FC<fetchcountryProps> = ({ country }) => {
   return (
-    <div className="h-20 my-5 w-20 border-2 border-secondary-200 bg-black">
+    <div className="h-20 my-5 w-20 md:h-16 md:w-16 border-2 border-secondary-200 bg-black">
       {country.correctAnswer1Tick === 0 && <div></div>}
       {country.correctAnswer1Tick === 1 && (
         <svg
@@ -13,7 +13,7 @@ const ResultBox1: FC<fetchcountryProps> = ({ country }) => {
           height="48"
           width="48"
           fill="none"
-          className=" stroke-primary-200"
+          className=" stroke-primary-200 md:w-44 md:h-44"
           stroke-width="5"
         >
           <motion.path
@@ -32,7 +32,7 @@ const ResultBox1: FC<fetchcountryProps> = ({ country }) => {
           height="48"
           width="48"
           fill="none"
-          className=" stroke-primary-200"
+          className=" stroke-primary-200 md:w-44 md:h-44"
           stroke-width="5"
         >
           <motion.path

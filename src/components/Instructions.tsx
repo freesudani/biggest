@@ -32,7 +32,7 @@ const Instructions: FC = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="h-7/12 w-3/5 bg-primary-200 border-2 border-solid border-black rounded-lg shadow-lg shadow-black relative"
+      className="h-3/6 sm:h-4/6  w-3/5 ph:w-4/5 bg-primary-200 border-2 border-solid border-black rounded-lg shadow-lg shadow-black relative"
     >
       <div className="grid grid-rows-[1fr_4fr]">
         <div className="flex justify-around items-center m-5">
@@ -43,8 +43,8 @@ const Instructions: FC = () => {
                   <h1
                     className={
                       step >= item.id
-                        ? "flex justify-center items-center text-4xl rounded-full bg-secondary-100 text-white w-16 h-16 transition-all duration-300 ease-in"
-                        : "flex justify-center items-center text-4xl rounded-full bg-primary-100 text-white w-16 h-16 transition-all duration-300 ease-in"
+                        ? "flex justify-center items-center text-4xl rounded-full bg-secondary-100 text-white w-16 h-16 mb:w-14 mb:h-14 transition-all duration-300 ease-in"
+                        : "flex justify-center items-center text-4xl rounded-full bg-primary-100 text-white w-16 h-16 mb:w-14 mb:h-14 transition-all duration-300 ease-in"
                     }
                   >
                     {item.id - 1}
@@ -66,7 +66,7 @@ const Instructions: FC = () => {
         <div>
           <motion.h1
             variants={paragraphVariant}
-            className="m-10 text-2xl text-black font-bold font-rubik capitalize text-justify"
+            className="m-10 text-2xl mb:text-xl text-black font-bold font-rubik capitalize text-justify"
           >
             {data[step - 1].description}
           </motion.h1>

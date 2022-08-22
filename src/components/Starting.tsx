@@ -30,7 +30,7 @@ const Starting: FC = () => {
         exit="exit"
         className="my-5"
       >
-        <img src={StartingImage} alt="starting" />
+        <img src={StartingImage} alt="starting" className="ph:w-3/4 mx-auto" />
       </motion.div>
       <motion.div
         variants={startingVariant}
